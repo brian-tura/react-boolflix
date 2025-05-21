@@ -6,12 +6,16 @@ const MovieCard = ({ id, title, original_title, original_language, vote_average,
     const image = `https://image.tmdb.org/t/p/w342/${src}`
     const rating = Math.round(vote_average / 2)
 
+    function MouseOver(e) {
+        e.target.style.display = ''
+    }
+
     return (
         <div key={id} className='col-3 card info-card'>
             <div className='film-img'>
                 <img className='img-fluid' src={image} alt="" />
             </div>
-            <div className='info'>
+            <div className='info' id='descr' onMouseOver={MouseOver}>
                 <h4>Titolo: {title}</h4>
                 <p>Titolo originale: {original_title}</p>
                 <p>Lingua originale: {original_language === "it" ? <span className='fi fi-it'></span> : <span className='fi fi-us'></span>}</p>

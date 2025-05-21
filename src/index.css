@@ -40,13 +40,15 @@ main{
 
 .film-img{
     z-index: 1;
-    border: 3px solid white;
+    position: sticky;
+    top: 0;
 }
-
 
 .info-card{
     position: relative;
     overflow: hidden;
+    border: 3px solid white;
+    height: 500px;
 }
 
 .info-card:hover{
@@ -60,4 +62,6 @@ main{
     position: absolute;
     top: 20px;
     left: 20px;
+    right: 10px;
 }
+
