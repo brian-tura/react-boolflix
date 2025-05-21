@@ -41,7 +41,7 @@ const MovieList = () => {
         <>
 
             <header>
-                <div className='container'>
+                <div className='container search-bar'>
                     <div className='row d-flex justify-content-between align-items-center'>
                         <div className="col-4">
                             <h2>BOOLFLIX</h2>
@@ -56,14 +56,15 @@ const MovieList = () => {
                 </div>
 
             </header>
-            <main>
+            <main className='vh'>
                 <div className='container'>
                     <div className='row'>
+
                         {filteredMovies.map((movie) => (
-                            <MovieCard id={`movie-${movie.id}`} title={movie.title} original_title={movie.original_title} original_language={movie.original_language} vote_average={movie.vote_average} src={movie.poster_path} />
+                            <MovieCard id={`movie-${movie.id}`} title={movie.title} original_title={movie.original_title} original_language={movie.original_language} vote_average={movie.vote_average} src={movie.poster_path} overview={movie.overview} />
                         ))}
                         {filteredSeries.map((serie) => (
-                            <MovieCard id={`serie-${serie.id}`} title={serie.name} original_title={serie.original_name} original_language={serie.original_language} vote_average={serie.vote_average} src={serie.poster_path} />
+                            <MovieCard id={`serie-${serie.id}`} title={serie.name} original_title={serie.original_name} original_language={serie.original_language} vote_average={serie.vote_average} src={serie.poster_path} overview={serie.overview} />
                         ))}
                     </div>
 
