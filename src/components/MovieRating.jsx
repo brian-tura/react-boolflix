@@ -5,11 +5,11 @@ const MovieRating = ({vote}) => {
     const emptyStars = []
     
     for(let i = 0; i<vote; i++){
-        fullStars.push(<i key={i} class="fa-solid fa-star"></i>)
+        fullStars.push(<i key={i} className="fa-solid fa-star"></i>)
     } 
     
-    for(let i = 0; i<5-vote; i++){
-        emptyStars.push(<i key={`-${i}`} class="fa-regular fa-star"></i>)
+    for(let j = 0; j<5-vote; j++){
+        emptyStars.push(<i key={`-${j}`} className="fa-regular fa-star"></i>)
     }
 
     return (

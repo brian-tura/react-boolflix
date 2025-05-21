@@ -35,25 +35,40 @@ const MovieList = () => {
         filterSeries(searchTitle);
     }
 
-    
+
 
     return (
         <>
-            <div>
-                <form action="" onSubmit={handleSubmit}>
-                    <label htmlFor="">Titolo</label>
-                    <input type="text" id='title' name='title' onChange={handleChange}/>
-                    <input type="submit" value="Submit"/>
-                </form>
-                <div>
-                    {filteredMovies.map((movie) => (
-                       <MovieCard id={`movie-${movie.id}`} title={movie.title} original_title={movie.original_title} original_language={movie.original_language} vote_average={movie.vote_average} src={movie.poster_path}/>
-                    ))}
-                    {filteredSeries.map((serie) => (
-                       <MovieCard id={`serie-${serie.id}`} title={serie.name} original_title={serie.original_name} original_language={serie.original_language} vote_average={serie.vote_average} src={serie.poster_path} />
-                    ))}
+
+            <header>
+                <div className='container'>
+                    <div className='row d-flex justify-content-between align-items-center'>
+                        <div className="col-4">
+                            <h2>BOOLFLIX</h2>
+                        </div>
+                        <div className="col-4">
+                            <form className='d-flex' action="" onSubmit={handleSubmit}>
+                                <input type="text" id='title' name='title' onChange={handleChange} placeholder='Search...' />
+                                <input className='btn' type="submit" value="Submit" />
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+            </header>
+            <main>
+                <div className='container'>
+                    <div className='row'>
+                        {filteredMovies.map((movie) => (
+                            <MovieCard id={`movie-${movie.id}`} title={movie.title} original_title={movie.original_title} original_language={movie.original_language} vote_average={movie.vote_average} src={movie.poster_path} />
+                        ))}
+                        {filteredSeries.map((serie) => (
+                            <MovieCard id={`serie-${serie.id}`} title={serie.name} original_title={serie.original_name} original_language={serie.original_language} vote_average={serie.vote_average} src={serie.poster_path} />
+                        ))}
+                    </div>
+
+                </div>
+            </main>
         </>
 
     )
